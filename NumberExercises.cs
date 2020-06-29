@@ -137,3 +137,41 @@ namespace Exercise_5
 
     }
 }
+
+// ================================================================================================================================================
+
+namespace Exercise_6
+{
+    // FizzBuzz; if number is divisible by 3 (Fizz), divisible by 5 (Buzz), divisible by both 3 & 5 (FIZZBUZZ)
+
+    public class Fizzbuzz
+    {
+        public static void Main()
+        {
+            Console.Write("Input an integer and play FizzBuzz: ");
+            int integer = Int32.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= integer; i++)
+            {
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FIZZBUZZ - {0}" , i);
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("FIZZ - {0}", i);
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("BUZZ - {0}", i);
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+        }
+
+    }
+}
