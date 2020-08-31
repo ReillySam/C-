@@ -175,3 +175,79 @@ namespace Exercise_6
 
     }
 }
+
+// ================================================================================================================================================
+
+namespace Exercise_7
+{
+    // Narcissistic Number; a numbers that's digits powered by its length and sumed are equal to itself e.g. 
+
+    public class NarcissisticNumber
+    {
+        public static void Main()
+        {
+            bool nar_loop = true;
+            while nar_loop();
+            {
+                Console.Write("Input an integer and check if it's a Narcissisistic Number (type a letter to quit): ");
+                int integer = Int32.Parse(Console.ReadLine());
+                // try block, if integer cannot be parsed break loop
+
+                int num_length = 0;
+                for (int i = 1; i <= integer; i++)
+                {
+                    num_length += 1;
+                }
+
+                int nar_num = 0;
+                for (int i = 1; i <= integer; i++)
+                {
+                    int digit = i * num_length;
+                    nar_num += digit;
+                }
+
+                if (nar_num == integer)
+                {
+                    Console.WriteLine("{0} IS a Narcissistic Number", integer);
+                }
+
+                else if (nar_num != integer)
+                {
+                    Console.WriteLine("{0} is NOT a Narcissistic Number", integer);
+                }
+               
+            }
+
+        }
+    }
+}
+
+// ================================================================================================================================================
+
+namespace Exercicse_8
+{
+    /*Write a program that prompts for an integer — let’s call it X — and then finds the
+    sum of X consecutive integers starting at 1. That is, if X = 5, you will find the sum
+    of 1 + 2 + 3 + 4 + 5 = 15.*/
+
+}
+public class Consecutive_sum
+{
+    public static void Main()
+    {
+        Console.Write("Enter an integer:");
+        int integer = Int32.Parse(Console.ReadLine());
+
+        int sum = 0;
+        for (int i = 1; i <= integer; i++)
+        {
+            sum += i;
+            for (int j = 1; j <= sum; j++)
+                Console.WriteLine("{} + {} = {}", i, j, sum);
+
+        }
+
+        Console.WriteLine(integer);
+
+    }
+}
