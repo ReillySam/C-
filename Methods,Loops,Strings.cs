@@ -29,3 +29,53 @@ namespace Methods_Loops_Strings
 
     }
 }
+
+// ====================================================================================================================================================================================================
+
+// Exercise 2
+// Suppose you have a string ab_string = 'abababababababab' . Write an expression to remove all the b’s and create a string a string = 'aaaaaaaa' .
+class Program
+{
+    static void Main(string[] args)
+    {
+        string str = "abababababababab";
+        Console.WriteLine(str);
+
+        Console.WriteLine(str.Replace("b", ""));
+    }
+}
+
+// ====================================================================================================================================================================================================
+
+// Exercise 3
+// Write a Python program that will swap two random letters in a string. Hint: Random letters means “letters with random index”
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a string: ");
+        string string_1 = Console.ReadLine();
+
+        // Console.WriteLine(string_1.Replace(string_1[0], string_1[^1]));
+
+        for (var i = 1; i < string_1.Length; i++)
+        {
+            if (string_1[i] == "a")
+            {
+                string_1.Replace("a", "b");
+            }
+            else if (string_1[i] == "b")
+            {
+                string_1.Replace("b", "a");
+            }
+            else
+            {
+                continue;
+            }
+
+        }
+        Console.WriteLine(string_1);
+
+    }
+}
