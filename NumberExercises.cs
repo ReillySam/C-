@@ -186,42 +186,38 @@ namespace Exercise_7
     {
         public static void Main()
         {
-            bool nar_loop = true;
-            while nar_loop();
+            Console.Write("Input an integer and check if it's a Narcissisistic Number: ");
+            int integer = int.Parse(Console.ReadLine());
+
+            int num_length = 0;
+            string num_str = integer.ToString();
+            for (int i = 1; i <= num_str.Length; i++)
             {
-                Console.Write("Input an integer and check if it's a Narcissisistic Number (type a letter to quit): ");
-                int integer = Int32.Parse(Console.ReadLine());
-                // try block, if integer cannot be parsed break loop
+                num_length += 1;
+            }
 
-                int num_length = 0;
-                for (int i = 1; i <= integer; i++)
-                {
-                    num_length += 1;
-                }
+            int nar_num = 0;
+            for (int i = 1; i <= num_str.Length; i++)
+            {
+                double powered = Math.Pow(i, num_length);
+                int digit = (int)powered;
+                nar_num += digit;
+                Console.WriteLine(nar_num);
+            }
 
-                int nar_num = 0;
-                for (int i = 1; i <= integer; i++)
-                {
-                    int digit = i * num_length;
-                    nar_num += digit;
-                }
+            if (nar_num == (int)integer)
+            {
+                Console.WriteLine("{0} IS a Narcissistic Number", integer);
+            }
 
-                if (nar_num == integer)
-                {
-                    Console.WriteLine("{0} IS a Narcissistic Number", integer);
-                }
-
-                else if (nar_num != integer)
-                {
-                    Console.WriteLine("{0} is NOT a Narcissistic Number", integer);
-                }
-               
+            else if (nar_num != integer)
+            {
+                Console.WriteLine("{0} is NOT a Narcissistic Number", integer);
             }
 
         }
     }
 }
-
 // ================================================================================================================================================
 
 namespace Exercicse_8
