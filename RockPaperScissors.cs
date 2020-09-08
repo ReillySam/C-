@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Math;
 
+// Basic Rock Papper Scissors game to understand C# syntax and fundamentals 
 namespace RockPaperScissors
 
 {
