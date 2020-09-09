@@ -48,7 +48,7 @@ class Program
 // ====================================================================================================================================================================================================
 
 // Exercise 3
-// Write a Python program that will swap two random letters in a string. Hint: Random letters means “letters with random index”
+// Write a program that will swap two random letters in a string. Hint: Random letters means “letters with random index”
 
 class Program
 {
@@ -57,6 +57,7 @@ class Program
         Console.WriteLine("Enter a string: ");
         string string_1 = Console.ReadLine();
 
+        // index first and last elements and swap them using replace
         Console.WriteLine(string_1.Replace(string_1[0], string_1[^1]), string_1.Replace(string_1[^1], string_1[0]));
     }
 }
