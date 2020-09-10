@@ -61,3 +61,61 @@ class Program
         Console.WriteLine(string_1.Replace(string_1[0], string_1[^1]), string_1.Replace(string_1[^1], string_1[0]));
     }
 }
+
+
+// ====================================================================================================================================================================================================
+
+// Exercise 4 
+/*Pig Latin program
+Pig Latin is a game of alterations played on words. To make the Pig Latin form of an English word the initial consonant sound is transposed to the end of the word and an
+“ay” is affixed. Specifically there are two rules:
+(a) If a word begins with a vowel, append “yay” to the end of the word.
+(b) If a word begins with a consonant, remove all the consonants from the beginning up to the first vowel and append them to the end of the word. Finally, append “ay”
+to the end of the word*/
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a word: ");
+        string word = Console.ReadLine();
+
+        while (word != "/")
+        {
+
+            // find the vowel index
+            int vowel_position = -1;
+            foreach (char letter in word)
+            {
+                vowel_position += 1;
+                if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u')
+                {
+                    break;
+                }
+            }
+
+            // apply rules
+            string piglatin_word = "";
+            string consonants = "";
+            switch (vowel_position)
+            {
+                case 0:
+                    piglatin_word = word + "yay";
+                    break;
+                case 1:
+                    consonants = word.Substring(0, vowel_position);
+                    piglatin_word = word + consonants + "ay";
+                    break;
+                default:
+                    piglatin_word = "Unable to translate";
+                    break;
+
+            }
+
+            Console.WriteLine("Translation: " + piglatin_word);
+            Console.WriteLine("Enter another word (type '/' to exit): ");
+            word = Console.ReadLine();
+
+        }
+    }
+}
