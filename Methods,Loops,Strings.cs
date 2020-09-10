@@ -103,7 +103,11 @@ class Program
                     piglatin_word = word + "yay";
                     break;
                 case 1:
-                    consonants = word.Substring(0, vowel_position);
+                    consonants = word.Substring(0, 1);
+                    piglatin_word = word + consonants + "ay";
+                    break;
+                case 2:
+                    consonants = word.Substring(0, 2);
                     piglatin_word = word + consonants + "ay";
                     break;
                 default:
