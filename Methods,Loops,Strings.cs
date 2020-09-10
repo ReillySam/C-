@@ -126,3 +126,31 @@ class Program
         }
     }
 }
+
+// ====================================================================================================================================================================================================
+
+// Exercise 5
+/*
+    Write a program that takes a number as a parameter, iterates from 0 to that number, and for each iteration of the loop, multiplies the current number by 9
+    and prints the result
+ */
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number: ");
+        int fact_num = int.Parse(Console.ReadLine());
+        Factorial(fact_num);
+        
+    }
+    public static int Factorial(int number)
+    {
+        int result = 0;
+        for (int i = 1; i <= number; i++)
+        {
+            result = i * 9;
+            Console.WriteLine("{0} x 9 = {1}", i.ToString(), result.ToString());
+        }
+        return result;
+    }
+}
