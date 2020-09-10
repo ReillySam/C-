@@ -97,6 +97,7 @@ class Program
             // apply rules
             string piglatin_word = "";
             string consonants = "";
+            string kept_letters = "";
             switch (vowel_position)
             {
                 case 0:
@@ -104,11 +105,13 @@ class Program
                     break;
                 case 1:
                     consonants = word.Substring(0, 1);
-                    piglatin_word = word + consonants + "ay";
+                    kept_letters = word.Substring(1);
+                    piglatin_word = kept_letters + consonants + "ay";
                     break;
                 case 2:
                     consonants = word.Substring(0, 2);
-                    piglatin_word = word + consonants + "ay";
+                    kept_letters = word.Substring(2);
+                    piglatin_word = kept_letters + consonants + "ay";
                     break;
                 default:
                     piglatin_word = "Unable to translate";
