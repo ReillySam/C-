@@ -9,7 +9,7 @@ using System;
 
 
 /*    =========================================================================================================================================================== #
-                                                                        # Exercise 1 -
+                                                                        # Exercise 1 - Binary Gap
 
     A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded
     by ones at both ends in the binary representation of N.For example, number 9 has binary representation 1001 
