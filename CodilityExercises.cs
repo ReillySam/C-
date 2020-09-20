@@ -59,7 +59,7 @@ namespace CodilityExercises.cs
             }
             Console.WriteLine(binary);
             return max_gap;
-            }
+        }
     }
 
 }
