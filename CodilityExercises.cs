@@ -25,9 +25,9 @@ namespace CodilityExercises.cs
         static void Main(string[] args)
         {
             Console.WriteLine("Input a number and find its maximum binary gap length: ");
-            int num = int.Parse(Console.ReadLine());
+            int integer = int.Parse(Console.ReadLine());
             var n = new Solution();
-            Console.WriteLine(n.solution(num));
+            Console.WriteLine(n.solution(integer));
 
         }
     }
