@@ -63,3 +63,50 @@ namespace CodilityExercises.cs
     }
 
 }
+
+
+/*    =========================================================================================================================================================== #
+                                                                        # Exercise 2 - Smallest Positive Integer
+
+    You are given an unsorted array with both positive and negative elements. You have to find the smallest positive 
+    number missing from the array in O(n) time using constant extra space. You can modify the original array.
+
+    Example:
+    Input:  {2, 3, 7, 6, 8, -1, -10, 15}
+    Output: 1
+
+*/
+
+
+    class Program
+    {
+        static void Main(int[] args)
+        {
+            List<int> num_array = new List<int>(new int[] { 2, 3, 7, 6, 8, -1, -10, 15 });
+            var n = new Solution();
+            Console.WriteLine(n.solution(num_array));
+        }
+
+    }
+    class Solution
+    {
+        public int solution(Array[] arr)
+        {
+
+            int smallest_pos_int = 1;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr.Length == 0) return 0;
+                if (arr.Contains(smallest_pos_int))
+                {
+                    smallest_pos_int += 1;
+                }
+
+                else return smallest_pos_int;
+            }
+            Console.WriteLine("Smallest Positive inetger = {}", smallest_pos_int);
+        }
+
+    }
+}
