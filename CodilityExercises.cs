@@ -105,7 +105,7 @@ namespace CodilityExercises.cs
 
                 else return smallest_pos_int;
             }
-            Console.WriteLine("Smallest Positive inetger = {}", smallest_pos_int);
+            Console.WriteLine("Smallest Positive Inetger = {}", smallest_pos_int);
         }
 
     }
