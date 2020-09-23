@@ -65,6 +65,7 @@ namespace CodilityExercises.cs
 }
 
 
+
 /*    =========================================================================================================================================================== #
                                                                         # Exercise 2 - Smallest Positive Integer
 
@@ -77,35 +78,35 @@ namespace CodilityExercises.cs
 
 */
 
-
     class Program
     {
         static void Main(int[] args)
         {
-            List<int> num_array = new List<int>(new int[] { 2, 3, 7, 6, 8, -1, -10, 15 });
+            int[] num_array = new int[] { 2, 3, 7, 6, 8, -1, -10, 15 };
             var n = new Solution();
-            Console.WriteLine(n.solution(num_array));
+            Console.WriteLine(n.Smallest(num_array));
         }
 
     }
     class Solution
     {
-        public int solution(Array[] arr)
+        public int Smallest(int[] numbers)
         {
 
             int smallest_pos_int = 1;
 
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if (arr.Length == 0) return 0;
-                if (arr.Contains(smallest_pos_int))
+                if (numbers.Length == 0) return 0;
+                if (i == smallest_pos_int)
                 {
                     smallest_pos_int += 1;
                 }
 
-                else return smallest_pos_int;
             }
-            Console.WriteLine("Smallest Positive Inetger = {}", smallest_pos_int);
+            Console.WriteLine("Smallest Positive inetger = {}", smallest_pos_int);
+            return smallest_pos_int;
+
         }
 
     }
