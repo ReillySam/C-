@@ -111,3 +111,25 @@ namespace CodilityExercises.cs
 
     }
 }
+
+/*    =========================================================================================================================================================== #
+                                                                        # Exercise 3 - Product of Knumbers
+      
+        Implement the class ProductOfNumbers that supports two methods:
+
+        1. add(int num)
+        Adds the number num to the back of the current list of numbers.
+
+        2. getProduct(int k)
+        Returns the product of the last k numbers in the current list.
+        You can assume that always the current list has at least k numbers
+*/
+
+    class Program
+    {
+        static void Main(int[] args)
+        {
+
+        }
+
+    }
