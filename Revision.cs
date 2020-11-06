@@ -38,6 +38,30 @@ public class MainClass {
 }
 
 ==========================================================================================================================
+  
+using System;
+//Find the product of corresponding items in arrays
+class MainClass {
+  public static void Main (string[] args) 
+  {
+    int[] array_1 = {1, 3, -5, 4};
+    int[] array_2 = {1, 4, -5, -2};
+
+
+    Console.WriteLine("Array 1: [{0}]", string.Join(", ", array_1));
+    Console.WriteLine("Array 2: [{0}]", string.Join(", ", array_2));
+
+    Console.WriteLine("Product of each corresponding array elements\n");
+
+    for (int i = 0; i < array_1.Length; i++)
+    {
+      Console.Write(array_1[i] * array_2[i] + " ");
+    }
+     Console.WriteLine("\n");
+  }
+}
+
+==========================================================================================================================
 
 using System;
 //Number guessing game. 
