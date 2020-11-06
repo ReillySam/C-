@@ -36,3 +36,39 @@ public class MainClass {
   }
 
 }
+
+==========================================================================================================================
+
+using System;
+//Number guessing game. 
+
+class Program 
+{
+    static void Main(string[] args) 
+    {
+        Random rnd = new Random();
+        
+        int return_value = rnd.Next(1,100);
+        int guess = 0;
+        Console.WriteLine("I'm thinking of a number between 1 & 100. Can you guess it?");
+        
+        while (guess != return_value)
+        {
+            Console.WriteLine("Enter guess: ");
+            guess = Int32.Parse(Console.ReadLine());
+            if (guess < return_value)
+            {
+                Console.WriteLine("Nope! Too low, guess again!");
+            }
+            else if (guess > return_value)
+            {
+                Console.WriteLine("Nerp! Too high, guess again!");
+            }
+            else 
+            {
+                Console.WriteLine("Congratulations!! You got it > {0}", return_value);
+            }
+            
+        }
+    }
+}
