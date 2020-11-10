@@ -122,11 +122,28 @@ namespace CodilityExercises.cs
         You can assume that always the current list has at least k numbers
 */
 
-    class Program
+class ProductOfNumbers
+{
+    var num_list = new List<int>{ 5, 2, 8, 5, 9, 1};
+    
+    static void Main(int[] args)
     {
-        static void Main(int[] args)
-        {
-
-        }
+        Console.WriteLine("Product of Numbers");
+        Console.WriteLine(num_list);
+        Console.WriteLine("Input a number: ")
+        int number = Int32.Parse(Console.ReadLine());
+        
+        add(number);
+        
+    }
+    
+    private static void add(int number)
+    {
 
     }
+    
+    private static void getProduct(int k)
+    {
+
+    }
+}
