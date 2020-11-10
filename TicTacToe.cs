@@ -46,7 +46,7 @@ class Program
             var move = pieces[players_index];
             var opponent_move = pieces[next_player];
             
-            makeMove() // player move method
+            playerMakesMove() // player move method
             
             gameWon = checkWinner(); // check for win method
             gameOver = gameWon || checkDraw(); //check for draw
@@ -68,13 +68,85 @@ class Program
         }
         else
         {
-            Console.WriteLine("This game is a draw!!")
+            Console.WriteLine("This game is a draw!!");
         }
         
-        reportScores()
+        reportScores();
         
     }
     
-    private static void reportScores()
+    private static void reportScores(string [] players, int [] scores)
+    {
+        Console.WriteLine("{0} - {1} :: {2} - {3}", players[0], scores[0], players[1], scores[1]);
+    }
     
+    private static void resetBoard()
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            boardArr[i] = i.ToString();
+        }
+    }
+    
+    private static void playerMakesMove(string [] players, string player, string piece, string opp_piece)
+    {
+        do{
+            Console.Clear();
+            drawBoard();
+            Console.WriteLine(" ");
+        }
+        while (!tryMakeMove(string player, string piece, string opp_piece))
+        
+    }
+    
+    private static void tryMakeMove(string player, string player_piece, string opp_piece)
+    {
+        Console.WriteLine("{0}'s move - {1}", player, player_piece);
+        var move = Console.WriteLine("Enter move (1-9): ");
+        if (!availableMoves(int move, string player_piece, string opp_piece))
+        {
+            boardArr[move] = player_piece;
+            return true;
+        }
+        
+        Console.WriteLine("Position already taken! Try again: ");
+        Console.ReadLine();
+        Console.Clear();
+        return false;
+    }
+    
+    private static void availableMoves(int move, string player_piece, string opp_piece)
+    {
+        boardArr[move] == player_piece || boardArr[move] == opp_piece;
+    }
+    
+    private static void incrementScores(int [] scores, int player_index)
+    {
+        score[player_index] = score[player_index] + 1;
+    }
+    
+    private static void playAgain()
+    {
+        
+    }
+        
+    private static void checkWinner()
+    {
+        
+    }
+    
+    private static void checkDraw()
+    {
+        
+    }
+    
+    private static void isLine(int index_0, int index_1, int index_2, string piece)
+    {
+        return (boardArr[index_0] == piece && boardArr[index_1] == piece && boardArr[index_2] == piece);
+    }
+    
+    private static void horizontal(int start)
+    {
+        return ();
+    }
 }
