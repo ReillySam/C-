@@ -123,27 +123,73 @@ namespace CodilityExercises.cs
 */
 
 class ProductOfNumbers
+// Add number(k) to end of array. Multiply array ending k numbers by k.
 {
-    var num_list = new List<int>{ 5, 2, 8, 5, 9, 1};
+    static List<int> num_list = new List<int>{5, 2, 8, 5, 9, 1};
     
-    static void Main(int[] args)
+    public static void Main(string[] args)
     {
         Console.WriteLine("Product of Numbers");
-        Console.WriteLine(num_list);
-        Console.WriteLine("Input a number: ")
-        int number = Int32.Parse(Console.ReadLine());
+        Console.WriteLine(" ", string.Join(", ", num_list.ToString()));
+        Console.WriteLine("Input a number: ");
+        int num = Int32.Parse(Console.ReadLine());
         
-        add(number);
+        add(num);
+        getProduct(num);
+        
+        Console.WriteLine(" ", string.Join(", ", num_list));
+        Console.Write("Updated array: ");
         
     }
     
-    private static void add(int number)
+    private static void add(int num)
+    // Add number(k) to end of array.
     {
-
+        if (num == 0)
+        {
+            num_list.Clear();
+            Console.WriteLine(" ", string.Join(", ", num_list));
+        }
+        
+        else
+        {
+            num_list.Add(num_list[num_list.Count - 1] * num);
+            Console.WriteLine("Add {0}} > {1}", num, string.Join(", ", num_list));    
+        }
+        
     }
     
     private static void getProduct(int k)
+    // Multiply array ending k numbers by k.
     {
+        int size = num_list.Count;
+        
+        if (k == size)
+        {
+            return (int) num_list[size - 1];
+        }
+        
+        else if (k > size)
+        {
+            return 0;
+        }
+        
+        else
+        {
+            var prev_index = num_list[num_list.Count - k - 1];
+            if (prev_index == 0)
+            {
+                return (int) (num_list[num_list.Count - 1]);
+            }
+            
+            return (int) (num_list[num_list.Count - k - 1] / prev_index);
+        }
 
+        // for (int i = k - 1; i <= size; i++)
+        // {
+        //     num_list[i] = num_list[i] * k;
+        // }
+        
+        // return (int) num_list;
     }
 }
