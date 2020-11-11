@@ -185,9 +185,9 @@ class ProductOfNumbers
             return (int) (num_list[num_list.Count - k - 1] / prev_index);
         }
 
-        // for (int i = k - 1; i <= size; i++)
+        // for (int i = k; i <= size; i++)
         // {
-        //     num_list[i] = num_list[i] * k;
+        //     num_list[num_list.Count - i] = num_list[num_list.Count - i] * k;
         // }
         
         // return (int) num_list;
