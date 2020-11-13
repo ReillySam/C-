@@ -159,7 +159,7 @@ class ProductOfNumbers
         
     }
     
-    private static void getProduct(int k)
+    private static int getProduct(int k)
     // Multiply array ending k numbers by k.
     {
         int size = num_list.Count;
