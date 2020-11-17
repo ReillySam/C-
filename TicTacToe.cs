@@ -145,6 +145,11 @@ class Program
         return (boardArr[index_0] == piece && boardArr[index_1] == piece && boardArr[index_2] == piece);
     }
     
+    private static void isAnyLine(int start, int step)
+    {
+        return IsLine(start, start+step, start+step+step, Pos[start]);
+    }
+    
     private static void horizontal(int start)
     {
         return ();
