@@ -33,7 +33,7 @@ class Program
         
     }
     
-    private static void playGame(string [] players, int [] scores, string [] pieces)
+    private static bool playGame(string [] players, int [] scores, string [] pieces)
     {
         bool gameWon = false;
         bool gameOver = false;
@@ -88,6 +88,11 @@ class Program
         }
     }
     
+    private static int userMoveInput()
+    {
+        
+    }
+    
     private static void playerMakesMove(string [] players, string player, string piece, string opp_piece)
     {
         do{
@@ -99,7 +104,7 @@ class Program
         
     }
     
-    private static void tryMakeMove(string player, string player_piece, string opp_piece)
+    private static bool tryMakeMove(string player, string player_piece, string opp_piece)
     {
         Console.WriteLine("{0}'s move - {1}", player, player_piece);
         var move = Console.WriteLine("Enter move (1-9): ");
@@ -130,9 +135,11 @@ class Program
         
     }
         
-    private static void checkWinner()
+    private static bool checkWinner()
     {
-        
+        return isAnyLine(1, 4) || isAnyLine(3, 2) ||
+               horizontal(1) || horizontal(4) || horizontal(7) ||
+               vertical(1) || vertical(2) || vertical(3);
     }
     
     private static void checkDraw()
@@ -140,18 +147,27 @@ class Program
         
     }
     
-    private static void isLine(int index_0, int index_1, int index_2, string piece)
+    
+    //helper methods for indexing board
+    
+    private static bool isLine(int index_0, int index_1, int index_2, string piece)
     {
         return (boardArr[index_0] == piece && boardArr[index_1] == piece && boardArr[index_2] == piece);
     }
     
-    private static void isAnyLine(int start, int step)
+    private static bool isAnyLine(int start, int step)
     {
-        return IsLine(start, start+step, start+step+step, Pos[start]);
+        return IsLine(start, start+step, start+step+step, boardArr[start]);
     }
     
-    private static void horizontal(int start)
+    private static bool horizontal(int start_index)
     {
-        return ();
+        return isAnyLine(start_index, 1);
     }
+    
+    private static bool vertical(int start_index)
+    {
+        return isAnyLine(start_index, 3);
+    }
+    
 }
