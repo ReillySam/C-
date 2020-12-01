@@ -132,7 +132,7 @@ class Program
     
     private static void playAgain()
     {
-        
+        // check if checkWinner() || checkDraw() returns. Ask for user input to play again. Reset board and scores. 
     }
         
     private static bool checkWinner()
@@ -144,7 +144,7 @@ class Program
     
     private static void checkDraw()
     {
-        
+        // check if checkWinner() returns true && if there are no moves left to play 
     }
     
     
