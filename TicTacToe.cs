@@ -7,17 +7,14 @@ class Program
     
     private static void drawBoard()
     {
-        // make this more dynamic by using variables
-        Console.Clear();
-        Console.WriteLine("      |       |       ");
-        Console.WriteLine("   {0}   |    {1}   |     {2}  ", boardArr[1], boardArr[2], boardArr[3]);
-        Console.WriteLine("----------------------");
-        Console.WriteLine("      |       |       ");
-        Console.WriteLine("   {0}   |    {1}   |     {2}  ", boardArr[4], boardArr[5], boardArr[6]);
-        Console.WriteLine("----------------------");
-        Console.WriteLine("      |       |       ");
-        Console.WriteLine("   {0}   |    {1}   |     {2}  ", boardArr[7], boardArr[8], boardArr[9]);
+        string format = "   {0}  |  {1}  |  {2}   ";
+        string separator= "-------------------"
+        int boardSize = 9;
+        int Columns = 3;
 
+        for (int i = 1; i < boardSize; i+=Columns;) { // Pos will go from 1 to 4, then 4 to 7
+            Console.WriteLine(format , pos[i], pos[i+1], pos[i+2]);
+            Console.WriteLine(separator);
     }
     
     private static string[] setPlayers()
