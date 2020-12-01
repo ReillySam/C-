@@ -7,6 +7,7 @@ class Program
     
     private static void drawBoard()
     {
+        // make this more dynamic by using variables
         Console.Clear();
         Console.WriteLine("      |       |       ");
         Console.WriteLine("   {0}   |    {1}   |     {2}  ", boardArr[1], boardArr[2], boardArr[3]);
@@ -90,7 +91,7 @@ class Program
     
     private static int userMoveInput()
     {
-        
+        // prompt for user input between min and max numbers
     }
     
     private static void playerMakesMove(string [] players, string player, string piece, string opp_piece)
@@ -132,19 +133,26 @@ class Program
     
     private static void playAgain()
     {
-        // check if checkWinner() || checkDraw() returns. Ask for user input to play again. Reset board and scores. 
+        // check if checkWinner() || checkDraw() returns. Ask for user input to play again. Reset board and scores or quit.
     }
         
-    private static bool checkWinner()
+    static bool checkWinner()
     {
         return isAnyLine(1, 4) || isAnyLine(3, 2) ||
                horizontal(1) || horizontal(4) || horizontal(7) ||
                vertical(1) || vertical(2) || vertical(3);
     }
     
-    private static void checkDraw()
+    static bool checkDraw()
     {
-        // check if checkWinner() returns true && if there are no moves left to play 
+        // check if checkWinner() returns true && if there are no moves left to play
+        if (!availableMoves() && !checkWinner())
+        {
+            Console.Writeline("The game has ended in a draw!!");
+            palyAgain();
+        }
+        
+        continue;
     }
     
     
