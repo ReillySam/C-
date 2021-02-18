@@ -91,17 +91,26 @@ namespace CodilityExercises.cs
         {
 
             int smallest_pos_int = 1;
-
+            Dictionary<int, bool> current_smallest = new Dictionary<int, bool>();
+            
+            // store in dict
             for (int i = 0; i < numbers.Length; i++)
             {
-                if (numbers.Length == 0) return 0;
-                if (i == smallest_pos_int)
-                {
-                    smallest_pos_int += 1;
-                }
-
+                if(numbers[i] > 0 && !current_smallest.ContainsKey(numbers[i]))
+                    {
+                        // record the current smallest pos int
+                        current_smallest.Add(numbers[i], true);
+                    }    
+                
+            // Check in dict for smallest missing int
+            while (current_smallest.ContainsKey(smallest_pos_int)
+                   {
+                       smallest_pos_int++;
+                   }
+                                                                    
             }
-            Console.WriteLine("Smallest Positive inetger = {}", smallest_pos_int);
+            // return missing smallest pos int
+            Console.WriteLine("Smallest Positive inetger = {0}", smallest_pos_int);
             return smallest_pos_int;
 
         }
